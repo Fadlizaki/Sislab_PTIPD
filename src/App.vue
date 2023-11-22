@@ -14,6 +14,7 @@
       <br>
       <br>
       <foother-component v-if="isAuthenticated" />
+      <token-checker></token-checker>
     </v-main>
   </v-app>
 </template>
@@ -21,6 +22,7 @@
 <script>
 import SidebarComponent from "./components/SidebarComponents.vue";
 import footherComponent from "./components/footerComponents.vue";
+import TokenChecker from './components/TokenChecker.vue';
 import { mapGetters } from "vuex";
 
 export default {
@@ -28,6 +30,7 @@ export default {
   components: {
     SidebarComponent,
     footherComponent,
+    TokenChecker,
   },
   computed: {
     ...mapGetters("auth", ["isAuthenticated"]),
